@@ -2,7 +2,11 @@
 
 [pre-commit](https://pre-commit.com) hooks for [Rust](https://www.rust-lang.org) tools.
 
-## Using Rust tools with pre-commit
+## Usage
+
+First, install the pre-commit Python package.
+
+Second, create a `.pre-commit-config.yaml` file in the top level of your Git-based project with the following content:
 
 ```yaml
 - repo: https://github.com/berquist/pre-commit-rust
@@ -12,6 +16,13 @@
     - id: cargo-check
     - id: cargo-clippy
     - id: cargo-test
+```
+
+Finally, install the pre-commit hook locally and run it for the first time:
+
+```bash
+pre-commit install
+pre-commit run -a
 ```
 
 ## Passing arguments to rustfmt
