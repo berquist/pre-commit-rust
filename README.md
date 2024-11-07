@@ -10,6 +10,8 @@
   hooks:
     - id: cargo-fmt
     - id: cargo-check
+    - id: cargo-clippy
+    - id: cargo-test
 ```
 
 ## Passing arguments to rustfmt
