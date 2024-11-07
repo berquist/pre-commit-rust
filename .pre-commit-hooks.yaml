@@ -13,10 +13,17 @@
   types: [rust]
   pass_filenames: false
 - id: cargo-clippy
-  name: cargo-clippy
+  name: cargo clippy
   description: Lint Rust sources with Clippy.
   entry: cargo clippy
   language: system
   args: ["--", "-D", "warnings"]
+  types: [rust]
+  pass_filenames: false
+- id: cargo-test
+  name: cargo test
+  description: Run tests
+  entry: cargo test
+  language: system
   types: [rust]
   pass_filenames: false
