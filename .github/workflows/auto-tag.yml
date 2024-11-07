@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: compute_tag
-        uses: craig-day/compute-tag@v10
+        uses: craig-day/compute-tag@08233c8e763aa357c7930adf553f5b2cd8d29d1b # v10
         with:
           github_token: ${{ github.token }}
           version_scheme: continuous
           version_type: major
 
       - name: create release
-        uses: actions/create-release@v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
         with:
           tag_name: ${{ steps.compute_tag.outputs.next_tag }}
           release_name: ${{ steps.compute_tag.outputs.next_tag }}
