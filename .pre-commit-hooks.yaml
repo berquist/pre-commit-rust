@@ -1,5 +1,5 @@
-- id: fmt
-  name: fmt
+- id: cargo-fmt
+  name: cargo fmt
   description: Format files with cargo fmt.
   entry: cargo fmt
   language: system
@@ -12,9 +12,9 @@
   language: system
   types: [rust]
   pass_filenames: false
-- id: clippy
-  name: clippy
-  description: Lint rust sources
+- id: cargo-clippy
+  name: cargo-clippy
+  description: Lint Rust sources with Clippy.
   entry: cargo clippy
   language: system
   args: ["--", "-D", "warnings"]
