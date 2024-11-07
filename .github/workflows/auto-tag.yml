@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: compute_tag
-        uses: craig-day/compute-tag@08233c8e763aa357c7930adf553f5b2cd8d29d1b # v10
+        uses: craig-day/compute-tag@30dd1c7ac3ef9a58278f133e2dcd105acb51a9b3 # v18
         with:
           github_token: ${{ github.token }}
           version_scheme: continuous
