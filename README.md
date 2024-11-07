@@ -1,25 +1,25 @@
 # Rust hooks for pre-commit
 
-[Rust](https://www.rust-lang.org) tools package for [pre-commit](https://pre-commit.com).
+[pre-commit](https://pre-commit.com) hooks for [Rust](https://www.rust-lang.org) tools.
 
-## Using rust tools with pre-commit
+## Using Rust tools with pre-commit
 
 ```yaml
--   repo: https://github.com/doublify/pre-commit-rust
-    rev: master
-    hooks:
-    -   id: fmt
-    -   id: cargo-check
+- repo: https://github.com/berquist/pre-commit-rust
+  rev: main
+  hooks:
+    - id: cargo-fmt
+    - id: cargo-check
 ```
 
 ## Passing arguments to rustfmt
 
 ```yaml
--   repo: https://github.com/doublify/pre-commit-rust
-    rev: master
-    hooks:
-    -   id: fmt
-        args: ['--verbose', '--', '--edition', '2018' ]
+- repo: https://github.com/berquist/pre-commit-rust
+  rev: main
+  hooks:
+    - id: cargo-fmt
+      args: ['--verbose', '--', '--edition', '2018' ]
 ```
 
-Note: Cargo fmt picks up "edition" automatically from Cargo.toml, so specificying this isn't necessary in most cases.
+Note: `cargo fmt` picks up "edition" automatically from `Cargo.toml`, so specifying this isn't necessary in most cases.
