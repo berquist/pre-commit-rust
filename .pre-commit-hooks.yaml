@@ -24,6 +24,6 @@
   name: cargo test
   description: Run tests
   entry: cargo test
-  language: system
+  language: rust
   types: [rust]
   pass_filenames: false
