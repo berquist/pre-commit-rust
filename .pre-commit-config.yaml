@@ -15,3 +15,8 @@ repos:
     rev: v4.0.1
     hooks:
       - id: validate_manifest
+  - repo: https://github.com/woodruffw/zizmor-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: zizmor
+        args: [--persona=pedantic]
