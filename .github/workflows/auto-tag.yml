@@ -6,11 +6,16 @@ on:
     branches:
       - master
 
+concurrency:
+  group: release-${{github.ref}}-${{github.event.pull_request.number || github.run_number}}
+  cancel-in-progress: true
+
 permissions: {}
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    name: Create release
+    runs-on: ubuntu-26.04
     steps:
       - id: compute_tag
         uses: craig-day/compute-tag@4f6e20dc9d852441c4e61a4b3ccadde9511f35f3 # v20
@@ -19,12 +24,14 @@ jobs:
           version_scheme: continuous
           version_type: major
 
-      - name: create release
-        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
-        with:
-          tag_name: ${{ steps.compute_tag.outputs.next_tag }}
-          release_name: ${{ steps.compute_tag.outputs.next_tag }}
-          body: >
-            Automatic release of ${{ steps.compute_tag.outputs.next_tag }}
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      # Disabling this until the action can be replaced with a gh CLI call
+      #
+      # - name: create release
+      #   uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
+      #   with:
+      #     tag_name: ${{ steps.compute_tag.outputs.next_tag }}
+      #     release_name: ${{ steps.compute_tag.outputs.next_tag }}
+      #     body: >
+      #       Automatic release of ${{ steps.compute_tag.outputs.next_tag }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }}
