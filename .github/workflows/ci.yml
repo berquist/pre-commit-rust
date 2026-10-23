@@ -16,8 +16,9 @@ jobs:
   prechecks:
     uses: $/.github/workflows/pre-commit.yml
   all-prechecks:
+    name: CI precheck success
     needs: [prechecks]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Success
         run: "true"
