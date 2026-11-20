@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-26.04
     steps:
       - id: compute_tag
-        uses: craig-day/compute-tag@4f6e20dc9d852441c4e61a4b3ccadde9511f35f3 # v20
+        uses: craig-day/compute-tag@188303e95f071e4024590432e51f16ee9668f472 # v23
         with:
           github_token: ${{ github.token }}
           version_scheme: continuous
